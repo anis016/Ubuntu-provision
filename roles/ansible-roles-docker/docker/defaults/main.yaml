@@ -1,0 +1,19 @@
+---
+
+# Edition can be one of: 'ce' (Community Edition) or 'ee' (Enterprise Edition)
+docker_setup__edition: 'ce'
+docker_setup__package:
+  - "docker-{{ docker_setup__edition }}"
+
+# Docker Compose options
+docker_setup__install_compose: true
+docker_setup__compose_version: "1.25.4"
+docker_setup__compose_path: /usr/local/bin/docker-compose
+
+docker_setup__apt_release_channel: stable
+docker_setup__apt_arch: amd64
+docker_setup__apt_repository: "deb [arch={{ docker_setup__apt_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_setup__apt_release_channel }}"
+docker_setup__apt_gpg_key: https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg
+
+# A list of users who will be added to the docker group.
+docker_setup__users: ['{{ ansible_ssh_user }}']

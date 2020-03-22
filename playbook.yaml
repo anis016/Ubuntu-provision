@@ -1,0 +1,4 @@
+---
+
+- import_playbook: './playbooks/setup-java/main.yaml'
+- import_playbook: './playbooks/setup-docker/main.yaml'

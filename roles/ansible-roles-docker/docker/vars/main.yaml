@@ -1,0 +1,12 @@
+---
+
+docker_setup__old_packages:
+  - 'docker'
+  - 'docker-common'
+  - 'docker-engine'
+docker_setup__dependencies:
+  - 'apt-transport-https'
+  - 'ca-certificates'
+  - 'gnupg2'
+  - 'software-properties-common'
+  - 'curl'

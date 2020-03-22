@@ -1,0 +1,7 @@
+---
+
+- name: 'Add apt key -- {{ apt__key_url }}'
+  apt_key:
+    url: '{{ apt__key_url }}'
+    state: '{{ apt__key_state }}'
+    validate_certs: '{{ apt__repo_validate_certs }}'

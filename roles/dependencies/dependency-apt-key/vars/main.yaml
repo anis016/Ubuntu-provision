@@ -1,0 +1,4 @@
+---
+
+apt__key_state: 'present'
+apt__key_validate_certs: 'yes'

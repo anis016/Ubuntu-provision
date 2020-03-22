@@ -1,0 +1,3 @@
+---
+
+java_openjdk__java_home: '/usr/lib/jvm/{{ java_openjdk__major_version }}'

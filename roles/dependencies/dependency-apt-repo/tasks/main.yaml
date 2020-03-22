@@ -1,0 +1,9 @@
+---
+
+- name: 'Set repository -- {{ apt__repo_repository }}'
+  apt_repository:
+    repo: '{{ apt__repo_repository }}'
+    mode: '{{ apt__repo_mode }}'
+    state: '{{ apt__repo_state }}'
+    update_cache: '{{ apt__repo_update_cache }}'
+    validate_certs: '{{ apt__repo_validate_certs }}'

@@ -1,0 +1,9 @@
+---
+
+- name: 'Install - {{ apt__packages | join(", ") }}'
+  apt:
+    name: '{{ apt__packages }}'
+    state: '{{ apt__state }}'
+    only_upgrade: '{{ apt__only_upgrade }}'
+    update_cache: '{{ apt__update_cache }}'
+    install_recommends: '{{ apt__install_recommends }}'

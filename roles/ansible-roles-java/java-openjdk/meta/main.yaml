@@ -1,0 +1,5 @@
+---
+
+#dependencies:
+#  - name: 'dependency-apt'
+#    apt__pkgs: '{{ java_openjdk__pkgs }}'
