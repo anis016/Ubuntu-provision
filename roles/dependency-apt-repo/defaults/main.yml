@@ -1,5 +1,6 @@
 ---
-dependency_apt_repo__repo_mode: "0644"
-dependency_apt_repo__repo_state: "present"
-dependency_apt_repo__repo_update_cache: yes
-dependency_apt_repo__repo_validate_certs: yes
+dependency_apt_repo__repo: ""
+dependency_apt_repo__mode: "0644"
+dependency_apt_repo__state: "present"
+dependency_apt_repo__update_cache: yes
+dependency_apt_repo__validate_certs: yes

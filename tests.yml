@@ -1,0 +1,7 @@
+---
+- name: Debug
+  hosts: "ubuntu"
+  tasks:
+    - name: debug
+      debug:
+        msg: "{{ java_openjdk__major_version }}"

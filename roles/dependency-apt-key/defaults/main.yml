@@ -1,3 +1,4 @@
 ---
-dependency_apt_key__key_state: "present"
-dependency_apt_key__key_validate_certs: yes
+dependency_apt_key__url: ""
+dependency_apt_key__state: "present"
+dependency_apt_key__validate_certs: yes

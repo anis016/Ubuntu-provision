@@ -1,6 +1,10 @@
 ---
-- name: Add apt key - {{ apt__key_url }}
+- name: Check if '{{ dependency_apt_key__url }}' is not empty
+  assert:
+    that: (dependency_apt_key__url | length) > 0
+
+- name: Add apt key - {{ dependency_apt_key__url }}
   apt_key:
-    url: '{{ apt__key_url }}'
-    state: '{{ dependency_apt_key__key_state }}'
-    validate_certs: '{{ dependency_apt_key__repo_validate_certs }}'
+    url: "{{ dependency_apt_key__url }}"
+    state: "{{ dependency_apt_key__state }}"
+    validate_certs: "{{ dependency_apt_key__validate_certs }}"

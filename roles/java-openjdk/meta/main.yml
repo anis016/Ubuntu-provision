@@ -1,4 +1,5 @@
 ---
 dependencies:
   - name: "dependency-apt"
-    apt__pkgs: "{{ java_openjdk__pkgs }}"
+    dependency_apt__packages:
+      - "{{ java_openjdk__major_version }}"

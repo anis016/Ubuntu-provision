@@ -1,2 +1,5 @@
 ---
-java_openjdk__java_home: "/usr/lib/jvm/{{ java_openjdk__major_version }}"
+java_openjdk__java_home: "{{ (java_openjdk__enable_jdk8 == true)
+  | ternary('/usr/lib/jvm/java-8-openjdk-amd64', '/usr/lib/jvm/java-11-openjdk-amd64') }}"
+java_openjdk__java_security_owner: "root"
+java_openjdk__java_security_group: "root"

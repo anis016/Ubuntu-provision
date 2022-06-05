@@ -1,9 +1,12 @@
 ---
+- name: Check if '{{ dependency_apt_repo__repo }}' is not empty
+  assert:
+    that: (dependency_apt_repo__repo | length) > 0
 
-- name: 'Set repository -- {{ apt__repo_repository }}'
+- name: Set repository -- {{ dependency_apt_repo__repo }}
   apt_repository:
-    repo: '{{ apt__repo_repository }}'
-    mode: '{{ apt__repo_mode }}'
-    state: '{{ apt__repo_state }}'
-    update_cache: '{{ apt__repo_update_cache }}'
-    validate_certs: '{{ apt__repo_validate_certs }}'
+    repo: "{{ dependency_apt_repo__repo }}"
+    mode: "{{ dependency_apt_repo__mode }}"
+    state: "{{ dependency_apt_repo__state }}"
+    update_cache: "{{ dependency_apt_repo__update_cache }}"
+    validate_certs: "{{ dependency_apt_repo__validate_certs }}"

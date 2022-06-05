@@ -1,0 +1,4 @@
+---
+java_openjdk__enable_jdk8: true
+java_openjdk__major_version: "{{ (java_openjdk__enable_jdk8 == true)
+  | ternary('openjdk-8-jdk', 'openjdk-11-jdk') }}"

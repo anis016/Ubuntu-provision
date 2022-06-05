@@ -1,7 +1,7 @@
 [ubuntu]
 localhost
 
-[ubuntu:vars]
+[all:vars]
 ansible_user=[ssh-user]
 ansible_password=[ssh-user-pass]
 ansible_become_password=[root-user-pass]
