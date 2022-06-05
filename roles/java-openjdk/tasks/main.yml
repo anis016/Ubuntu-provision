@@ -1,0 +1,17 @@
+---
+- debug:
+    msg: "need to complete java setup"
+
+#- name: "Create symlink for keytool"
+#  file:
+#    src: '/usr/lib/jvm/{{ java_openjdk_major_version }}'
+#    dest: '/usr/bin/keytool'
+#    owner: 'root'
+#    group: 'root'
+#    state: 'link'
+
+#- name: "Add JAVA_HOME globally in /etc/environment"
+#  lineinfile:
+#    path: /etc/environment
+#    line: export JAVA_HOME={{ java-openjdk__java_home }}
+#    state: present

@@ -1,0 +1,6 @@
+---
+- name: Setup Java
+  import_playbook: "./playbooks/setup-java.yml"
+
+- name: Setup Docker
+  import_playbook: "./playbooks/setup-docker.yml"

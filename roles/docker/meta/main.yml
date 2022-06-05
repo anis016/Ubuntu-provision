@@ -1,0 +1,18 @@
+---
+dependencies:
+  - name: "dependency-apt"
+    apt__packages: "{{ docker__old_packages }}"
+    apt__state: "absent"
+
+  - name: 'dependency-apt-key'
+    apt__key_url: "{{ docker__apt_gpg_key }}"
+
+  - name: 'dependency-apt-repo'
+    apt__repo_repository: '{{ docker__apt_repository }}'
+
+  - name: 'dependency-apt'
+    apt__packages: '{{ docker__dependencies }}'
+
+  - name: "dependency-apt"
+    apt__packages: '{{ docker__package }}'
+    notify: "restart docker"

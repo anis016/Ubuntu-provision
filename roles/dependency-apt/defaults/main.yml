@@ -1,0 +1,5 @@
+---
+dependency_apt__state: "latest"
+dependency_apt__only_upgrade: no
+dependency_apt__update_cache: yes
+dependency_apt__install_recommends: yes

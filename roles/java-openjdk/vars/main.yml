@@ -1,0 +1,4 @@
+---
+java_openjdk__java_security_owner: "root"
+java_openjdk__java_security_group: "root"
+java_openjdk__java_security_mode: "0644"

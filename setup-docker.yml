@@ -1,0 +1,6 @@
+---
+- name: Setup Docker
+  hosts: "ubuntu_host"
+  roles:
+    - role: "docker"
+      tags: "docker"

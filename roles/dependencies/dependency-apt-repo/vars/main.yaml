@@ -1,6 +1,0 @@
----
-
-apt__repo_mode: '0644'
-apt__repo_state: 'present'
-apt__repo_update_cache: 'yes'
-apt__repo_validate_certs: 'yes'

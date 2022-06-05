@@ -1,6 +1,0 @@
----
-
-apt__state: 'latest'
-apt__only_upgrade: 'no'
-apt__update_cache: 'yes'
-apt__install_recommends: 'yes'
