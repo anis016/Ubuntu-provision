@@ -2,5 +2,5 @@
 - name: Setup Java
   hosts: "ubuntu"
   roles:
-    - role: "java-openjdk"
+    - name: "java-openjdk"
       tags: "java"
