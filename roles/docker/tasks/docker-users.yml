@@ -1,8 +1,7 @@
 ---
-
-- name: 'Ensure docker users -- {{ docker_setup__users | join(",") }} are added to the docker group'
+- name: Add docker users -- {{ docker__users | join(",") }} to the docker group
   user:
     name: "{{ item }}"
     groups: docker
     append: true
-  with_items: "{{ docker_setup__users }}"
+  with_items: "{{ docker__users }}"

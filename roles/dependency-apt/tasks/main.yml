@@ -3,7 +3,7 @@
   assert:
     that: (dependency_apt__packages | join(',') | length) > 0
 
-- name: Install - {{ dependency_apt__packages | join(", ") }}
+- name: Ensure state '{{ dependency_apt__state | capitalize }}' for the packages '{{ dependency_apt__packages | join(", ") }}'
   apt:
     name: "{{ dependency_apt__packages }}"
     state: "{{ dependency_apt__state }}"

@@ -3,7 +3,7 @@
   assert:
     that: (dependency_apt_key__url | length) > 0
 
-- name: Add apt key - {{ dependency_apt_key__url }}
+- name: Ensure state '{{ dependency_apt_key__state | capitalize }}' for the apt key - '{{ dependency_apt_key__url }}'
   apt_key:
     url: "{{ dependency_apt_key__url }}"
     state: "{{ dependency_apt_key__state }}"

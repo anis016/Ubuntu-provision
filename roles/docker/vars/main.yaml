@@ -7,6 +7,5 @@ docker__old_packages:
 docker__dependencies:
   - "apt-transport-https"
   - "ca-certificates"
-  - "gnupg2"
   - "software-properties-common"
   - "curl"

@@ -1,18 +1,18 @@
 ---
 dependencies:
   - name: "dependency-apt"
-    apt__packages: "{{ docker__old_packages }}"
-    apt__state: "absent"
+    dependency_apt__packages: "{{ docker__old_packages }}"
+    dependency_apt__state: "absent"
 
-  - name: 'dependency-apt-key'
-    apt__key_url: "{{ docker__apt_gpg_key }}"
+  - name: "dependency-apt-key"
+    dependency_apt_key__url: "{{ docker__apt_gpg_key }}"
 
-  - name: 'dependency-apt-repo'
-    apt__repo_repository: '{{ docker__apt_repository }}'
+  - name: "dependency-apt-repo"
+    dependency_apt_repo__repo: "{{ docker__apt_repository }}"
 
   - name: 'dependency-apt'
-    apt__packages: '{{ docker__dependencies }}'
+    dependency_apt__packages: "{{ docker__dependencies }}"
 
   - name: "dependency-apt"
-    apt__packages: '{{ docker__package }}'
+    dependency_apt__packages: "{{ docker__package }}"
     notify: "restart docker"

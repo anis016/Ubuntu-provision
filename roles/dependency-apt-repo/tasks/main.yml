@@ -3,7 +3,7 @@
   assert:
     that: (dependency_apt_repo__repo | length) > 0
 
-- name: Set repository -- {{ dependency_apt_repo__repo }}
+- name: Ensure state '{{ dependency_apt_repo__state | capitalize }}' for the repository '{{ dependency_apt_repo__repo }}'
   apt_repository:
     repo: "{{ dependency_apt_repo__repo }}"
     mode: "{{ dependency_apt_repo__mode }}"

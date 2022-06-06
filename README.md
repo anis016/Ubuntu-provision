@@ -32,17 +32,40 @@ $ ansible -i inventory/ubuntu.ini -m ping all
 
 ### How to Run
 
-Use the below command to run the playbook (note: used the `--become` option to become root)
+Use the below command to run the playbook
 
 ```
-$ ansible-playbook -i inventory/ubuntu.ini ubuntu-provision.yaml --become
+$ ansible-playbook -i inventory/ubuntu.ini ubuntu-provision.yaml
 ```
 
 Or, in case of a particular setup use `tags`
 
 ```
-$ ansible-playbook -i inventory/ubuntu.ini ubuntu-provision.yaml --tags "docker" --become
+$ ansible-playbook -i inventory/ubuntu.ini ubuntu-provision.yaml --tags "docker"
 ```
+
+### Prerequisites
+
+Before running the playbook, `ansible` needs to be installed. For this use the below command
+
+```sh
+pip install -r requirements.txt
+```
+
+Also the SSH user (the `ansible_user` ) needs to be in the `sudoers` file, f.e. if `ansible` is the SSH user
+
+```sh
+touch /etc/sudoers.d/ansible
+echo "ansible  ALL=(ALL:ALL) ALL" > /etc/sudoers.d/ansible
+chown 640 /etc/sudoers.d/ansible
+```
+
+### List of roles
+
+Below are the list of softwares or packages that could be installed
+
+* Java
+* Docker
 
 ### Testing
 
@@ -79,6 +102,7 @@ test.hadoop.com ansible_port=2200
 [vagrant:vars]
 ansible_host=127.0.0.1
 ansible_user=vagrant
+ansible_become=yes
 ansible_private_key_file=.vagrant/machines/default/virtualbox/private_key
 ```
 
@@ -87,11 +111,3 @@ Check that the Ansible is able to connect to the Vagrant machine
 ```sh
 $ ansible -m ping all
 ```
-
-### TODO
-
-List of the packages planned to install
-
-* Java
-* Google chrome
-* etc.
