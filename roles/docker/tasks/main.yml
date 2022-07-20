@@ -15,3 +15,7 @@
 - name: Include task for docker-users setup
   include_tasks: docker-users.yml
   when: docker__users | length > 0
+
+- name: Correct the Docker daemon permission
+  shell: sudo chmod 666 /var/run/docker.sock
+

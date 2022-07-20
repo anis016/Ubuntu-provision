@@ -18,16 +18,32 @@ Copy the `inventory/ubuntu.ini.template` to `inventory/ubuntu.ini` and put the r
 $ cp inventory/ubuntu.ini.template inventory/ubuntu.ini
 ```
 
-Install the required package
+Install the required package using Python environment
 
 ```sh
 $ pip install -r requirements.txt
+```
+
+Or, install the `ansible` package
+
+```sh
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
 ```
 
 Run the below command to check that the the host is connected
 
 ```sh
 $ ansible -i inventory/ubuntu.ini -m ping all
+```
+
+If the above command gives an issue (probably due to new Ubuntu setup)
+
+```sh
+$ sudo apt-get remove openssh-client openssh-server
+$ sudo apt-get install openssh-client openssh-server
 ```
 
 ### How to Run
