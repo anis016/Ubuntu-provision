@@ -6,4 +6,4 @@ java_openjdk__major_version: "{{ (java_openjdk__enable_jdk8 == true)
 # A list of users who will be added to the docker group.
 docker__users:
   - "{{ ansible_user }}"
-docker__compose_version: "v2.6.0"
+docker__compose_version: "v2.9.0"
